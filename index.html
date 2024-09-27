@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>יצירת BBCODE</title>
+    <title>זכאות מנהלים</title>
 </head>
 <body>
     <div class="container">
-        <h1>צור BBCODE</h1>
+        <h1>זכאות מנהלים</h1>
         <form id="bbcodeForm">
-            <label>
-                <input type="checkbox" id="honorAdmin"> מנהל כבוד
-            </label>
-            <label>
-                <input type="checkbox" id="honorUser"> משתמש כבוד
-            </label>
+            <label><input type="checkbox" id="honorAdmin"><B><font color="#FF7F50">מנהל כבוד</font></label>
+            <label><input type="checkbox" id="honorUser"><font color="#FF8C00">משתמש כבוד</font></label>
+            <label><input type="checkbox" id="Supporter"><font color="#0099FF">חבר בצוות תמיכה</font></label>
+            <label><input type="checkbox" id="Tohen"><font color="#3366cc">חבר בצוות תוכן</font></label>
+            <label><input type="checkbox" id="Mharhim"><font color="#999900">חבר בצוות מארחים</font></label>
+            <label><input type="checkbox" id="Hagah"><font color="#33ccff">חבר בצוות הגהה</font></label>
+            <label><input type="checkbox" id="Tech"><font color="#008b8b">חבר בצוות טכנולוגיה</font></label>
+            <label><input type="checkbox" id="Kidom"><font color="#0099FF">חבר בצוות קידום</font></label>
+
             <br>
             <div id="formerManagerContainer">
-                <label>מנהל לשעבר:</label>
+                <label><font color="##FF0000">מנהל לשעבר:</font></label>
                 <input type="text" placeholder="פורום" class="formerManagerInput">
                 <button type="button" onclick="duplicateField('formerManagerInput', 'formerManagerContainer')">עוד</button>
             </div>
             <br>
             <div id="supervisorContainer">
-                <label>מפקח לשעבר:</label>
+                <label><font color="##0099FF">מפקח קטגוריית</font></label>
                 <input type="text" placeholder="קטגוריה" class="formerSupervisorInput">
                 <button type="button" onclick="duplicateField('formerSupervisorInput', 'supervisorContainer')">עוד</button>
             </div>
             <button type="button" onclick="generateBBCode()">צור</button>
         </form>
 
-        <h2>BBCODE שנוצר:</h2>
+        <h2>זכאות לשעבר:</h2>
         <textarea id="output" rows="10" readonly></textarea>
         <br>
         <button onclick="copyToClipboard()">העתק</button>
