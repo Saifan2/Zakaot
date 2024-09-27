@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>יצירת BBCODE</title>
+</head>
+<body>
+    <div class="container">
+        <h1>צור BBCODE</h1>
+        <form id="bbcodeForm">
+            <label>
+                <input type="checkbox" id="honorAdmin"> מנהל כבוד
+            </label>
+            <label>
+                <input type="checkbox" id="honorUser"> משתמש כבוד
+            </label>
+            <br>
+            <div id="formerManagerContainer">
+                <label>מנהל לשעבר:</label>
+                <input type="text" placeholder="פורום" class="formerManagerInput">
+                <button type="button" onclick="duplicateField('formerManagerInput', 'formerManagerContainer')">עוד</button>
+            </div>
+            <br>
+            <div id="supervisorContainer">
+                <label>מפקח לשעבר:</label>
+                <input type="text" placeholder="קטגוריה" class="formerSupervisorInput">
+                <button type="button" onclick="duplicateField('formerSupervisorInput', 'supervisorContainer')">עוד</button>
+            </div>
+            <button type="button" onclick="generateBBCode()">צור</button>
+        </form>
+
+        <h2>BBCODE שנוצר:</h2>
+        <textarea id="output" rows="10" readonly></textarea>
+        <br>
+        <button onclick="copyToClipboard()">העתק</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
