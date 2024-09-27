@@ -8,20 +8,20 @@ function generateBBCode() {
     }
 
     if (honorUser) {
-        output += '[COLOR=#FF8C00]משתמש כבוד/מנכ״ל לשעבר [/COLOR]\n';
+        output += '[COLOR=#FF8C00]משתמש כבוד[/COLOR]\n';
     }
 
     const managerInputs = document.querySelectorAll('.formerManagerInput');
     managerInputs.forEach(input => {
         if (input.value.trim() !== '') {
-            output += `<span class="ti mo">מנהל פורום ${input.value.trim()} לשעבר</span>\n`;
+            output += `[COLOR=#FF0000]מנהל פורום ${input.value.trim()} לשעבר[/COLOR]\n`;
         }
     });
 
     const supervisorInputs = document.querySelectorAll('.formerSupervisorInput');
     supervisorInputs.forEach(input => {
         if (input.value.trim() !== '') {
-            output += `<span class="ti mo">מפקח פורום ${input.value.trim()} לשעבר</span>\n`;
+            output += `[COLOR=#0099FF]מפקח קטגוריית ${input.value.trim()} לשעבר[/COLOR]\n`;
         }
     });
 
@@ -39,7 +39,7 @@ function duplicateField(inputClassName, containerId) {
     const container = document.getElementById(containerId);
     const newInput = document.createElement('input');
     newInput.type = 'text';
-    newInput.placeholder = containerId === 'formerManagerContainer' ? 'הזן שם מנהל לשעבר' : 'הזן שם מפקח לשעבר';
+    newInput.placeholder = containerId === 'formerManagerContainer' ? 'הזן פורום' : 'הזן קטגוריה';
     newInput.className = inputClassName;
     container.appendChild(newInput);
 }
